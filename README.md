@@ -1,24 +1,79 @@
-# README
+# Table
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Shopsテーブル
 
-Things you may want to cover:
+| Column              | Type       | Options                        |
+| ------------------- | ---------- | ------------------------------ |
+| name                | string     | null: false                    |
+| email               | string     | null: false, unique: true      |
+| encrypted_password  | string     | null: false                    |
+| text                | text       | null: false                    |
+| address             | string     | null: false                    |
+| building_name       | string     | null: false                    |
+| tel                 | string     | null: false                    |
+| holiday_id          | integer    | null: false                    |
+| opentime_at         | datetime   | null: false                    |
+| closetime_at        | datetime   | null: false                    |
+| parking             | string     | null: false                    |
+| genre_id            | integer    | null: false                    |
+| item                | references | null: false, foreign_key: true |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :items
 
-* Configuration
+## Usersテーブル
 
-* Database creation
+| Column             | Type   | Options                     |
+| ------------------ | ------ | --------------------------- |
+| nickname           | string | null: false                 |
+| email              | string | null: false, unique: true   |
+| encrypted_password | string | null: false                 |
+| last_name          | string | null: false                 |
+| first_name         | string | null: false                 |
+| tel                | string | null: false                 |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- has_many :item_users
+- has_many :items, through: :item_users
 
-* Services (job queues, cache servers, search engines, etc.)
+## Itemsテーブル
 
-* Deployment instructions
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| name     | string     | null: false                    |
+| text     | text       | null: false                    |
+| price    | integer    | null: false                    |
+| genre_id | integer    | null: false                    |
+| shop     | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- has_many :item_users
+- has_many :users, through: :item_users
+
+## Item_userテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| item   | references | null: false, foreign_key: true |
+| user   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :item
+- belongs_to :user
+- has_one :reserve
+
+## Reserveテーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| takeout_date | date       | null: false                    |
+| takeout_at   | dateime    | null: false                    |
+| item_user    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :item_user
