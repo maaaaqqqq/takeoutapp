@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 2022_02_14_142943) do
     t.string "address", null: false
     t.string "building_name"
     t.string "tel", null: false
-    t.integer "holiday_id", null: false
-    t.datetime "opentime_at", null: false
-    t.datetime "closetime_at", null: false
+    t.integer "holiday", null: false
+    t.time "opentime_at", null: false
+    t.time "closetime_at", null: false
     t.integer "parking_id", null: false
-    t.string "parking_explain", null: false
+    t.string "parking_explain"
     t.integer "genre_id", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

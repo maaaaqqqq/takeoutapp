@@ -9,7 +9,7 @@
 | encrypted_password  | string     | null: false                    |
 | text                | text       | null: false                    |
 | address             | string     | null: false                    |
-| building_name       | string     | null: false                    |
+| building_name       | string     |                                |
 | tel                 | string     | null: false                    |
 | holiday_id          | integer    | null: false                    |
 | opentime_at         | datetime   | null: false                    |
