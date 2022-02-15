@@ -14,7 +14,8 @@
 | holiday_id          | integer    | null: false                    |
 | opentime_at         | datetime   | null: false                    |
 | closetime_at        | datetime   | null: false                    |
-| parking             | string     | null: false                    |
+| parking_id          | integer    | null: false                    |
+| parking_explain     | string     | null: false                    |
 | genre_id            | integer    | null: false                    |
 | item                | references | null: false, foreign_key: true |
 
