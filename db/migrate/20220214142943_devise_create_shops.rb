@@ -7,6 +7,7 @@ class DeviseCreateShops < ActiveRecord::Migration[6.0]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :name,               null: false
+      t.string :name_kana,          null: false
       t.text :text,                 null: false
       t.string :address,            null: false
       t.string :building_name

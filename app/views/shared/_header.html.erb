@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="heading">
+    <h2 class="title ">Webで注文・決済を。</h2>
+    <h5 class="subtitle">TAKEOUT in NAGAOKA city</h5>
+  </div>
+  <div></div>
+  <div class="tab-wrap">
+    <input id="TAB-01" type="radio" name="TAB" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB-01">テイクアウトをご利用の方はこちらから</label>
+    <div class="tab-content">
+      <ul class="nav">
+        <li class="nav-item">
+        <%= link_to 'ログイン', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to '新規登録', root_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+
+    <input id="TAB-02" type="radio" name="TAB" class="tab-switch" /><label class="tab-label" for="TAB-02">飲食店関係者様はこちらから</label>
+    <div class="tab-content">
+      <ul class="nav">
+        <li class="nav-item">
+        <%= link_to '飲食店へログイン', shop_session_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to '飲食店の新規登録', new_shop_registration_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

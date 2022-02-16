@@ -5,9 +5,7 @@
       店舗情報入力
     </h1>
   </div>
-
   <%# <%= render 'shared/error_messages', model: f.object %> 
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
@@ -30,7 +28,6 @@
     </div>
     <%= f.password_field :password_confirmation, class:"input-default", id:"shop_password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お店の名前</label>
@@ -38,7 +35,6 @@
     </div>
     <%= f.text_area :name, class:"input-default", id:"shop_name", placeholder:"店名・店舗名", maxlength:"40" %>
   </div>
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お店の名前(全角カナ)</label>
@@ -46,8 +42,6 @@
     </div>
     <%= f.text_area :name_kana, class:"input-default", id:"shop_name_kana", placeholder:"例) テンメイ・テンポメイ" %>
   </div>
-
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お店のこだわり</label>
@@ -55,7 +49,6 @@
     </div>
       <%= f.text_area :text, class: :form__text, id:"shop_text" %>
   </div>
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お店住所</label>
@@ -63,14 +56,12 @@
     </div>
       <%= f.text_area :address, class:"input-default", id:"shop_address" %>
   </div>
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">建物名</label>
     </div>
       <%= f.text_area :building_name, class:"input-default", id:"shop_:building_name" %>
   </div>
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">電話番号</label>
@@ -78,7 +69,6 @@
     </div>
       <%= f.text_area :tel, class:"input-default", id:"shop_tel" %>
   </div>
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="holiday">定休日</label>
@@ -94,7 +84,6 @@
       <li class='holiday'><%= f.check_box :holiday, {multiple: true}, "土",nil %>土曜日</li>
     </ul>
   </div>
-
   <div class="form-group"  .form-inline.text-left>
     <div class='form-text-wrap'>
       <label class="form-text">開店時間</label>
@@ -102,7 +91,6 @@
     </div>
       <%= f.time_select :opentime_at, id:"shop_opentime" %>
   </div>
-
   <div class="form-group"  .form-inline.text-left>
     <div class='form-text-wrap'>
       <label class="form-text">閉店時間</label>
@@ -110,7 +98,6 @@
     </div>
       <%= f.time_select :closetime_at, id:"shop_closetime" %>
   </div>
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">駐車場の有無</label>
@@ -118,14 +105,12 @@
         <%# <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {class:"select-box", id:"shop_parking"}) %> 
     </div>
   </div>
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">駐車場の説明</label>
     </div>
     <%= f.text_area :parking_explain, class: :form__text, id:"shop_parking_explain" %>
   </div>
-
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お店のジャンル</label>
@@ -133,10 +118,6 @@
         <%# <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"shop_genre"}) %> 
     </div>
   </div>
-
-
-
-
   <div class="form-group">
     <h2 class='form-bottom-text'>
       「会員登録」のボタンを押すことにより、
@@ -150,3 +131,5 @@
   <%# <p class='register-info'>本人情報の登録について</p> %>
 </div>
 <% end %>
+
+<%= render "devise/shared/links" %>
