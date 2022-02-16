@@ -73,17 +73,13 @@ https://takeoutapp-37360.herokuapp.com/
 | name_kana           | string     | null: false                    |
 | text                | text       | null: false                    |
 | address             | string     | null: false                    |
-| building_name       | string     | null: false                    |
+| building_name       | string     |                                |
 | tel                 | string     | null: false                    |
 | holiday             | string     | null: false                    |
 | opentime_at         | datetime   | null: false                    |
 | closetime_at        | datetime   | null: false                    |
-<<<<<<< Updated upstream
-| parking             | string     | null: false                    |
-=======
 | parking_id          | integer    | null: false                    |
 | parking_explain     | string     |                                |
->>>>>>> Stashed changes
 | genre_id            | integer    | null: false                    |
 | item                | references | null: false, foreign_key: true |
 
