@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_02_14_142943) do
     t.string "address", null: false
     t.string "building_name"
     t.string "tel", null: false
-    t.integer "holiday", null: false
+    t.string "holiday", null: false
     t.time "opentime_at", null: false
     t.time "closetime_at", null: false
     t.integer "parking_id", null: false

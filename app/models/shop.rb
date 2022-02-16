@@ -4,11 +4,11 @@ class Shop < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to :parking
-  # belongs_to :genre
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :parking
+  belongs_to :genre
   
-  validates :text,:address,:holiday, presence: true
+  validates :text, :address, :holiday, presence: true
   validates :parking_id, :genre_id, numericality: { other_than: 1, message: "can't be blank" }
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze

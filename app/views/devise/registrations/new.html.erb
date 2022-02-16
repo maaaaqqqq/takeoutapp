@@ -1,11 +1,11 @@
-<%= form_with model: @shop, url: new_shop_registration_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @shop, url: shop_registration_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap container'>
   <div class='form-header'>
     <h1 class='form-header-text'>
       店舗情報入力
     </h1>
   </div>
-  <%# <%= render 'shared/error_messages', model: f.object %> 
+  <%= render 'shared/error_messages', model: f.object %>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
@@ -35,6 +35,7 @@
     </div>
     <%= f.text_area :name, class:"input-default", id:"shop_name", placeholder:"店名・店舗名", maxlength:"40" %>
   </div>
+
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お店の名前(全角カナ)</label>
@@ -47,14 +48,14 @@
       <label class="form-text">お店のこだわり</label>
       <span class="info-text">必須</span>
     </div>
-      <%= f.text_area :text, class: :form__text, id:"shop_text" %>
+      <%= f.text_area :text, class: :form__text, id:"shop_text" , placeholder:"中華料理専門店です"%>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お店住所</label>
       <span class="info-text">必須</span>
     </div>
-      <%= f.text_area :address, class:"input-default", id:"shop_address" %>
+      <%= f.text_area :address, class:"input-default", id:"shop_address", placeholder:"例) 長岡市〇〇町１ー３ー４" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -67,22 +68,14 @@
       <label class="form-text">電話番号</label>
       <span class="info-text">必須</span>
     </div>
-      <%= f.text_area :tel, class:"input-default", id:"shop_tel" %>
+      <%= f.text_area :tel, class:"input-default", id:"shop_tel" , placeholder:"例) 0258000000"%>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="holiday">定休日</label>
       <span class="info-text">必須</span>
     </div>
-    <ul class='holidays'>
-      <li class='holiday'><%= f.check_box :holiday, {multiple: true}, "日",nil %>日曜日</li>
-      <li class='holiday'><%= f.check_box :holiday, {multiple: true}, "月",nil %>月曜日</li>
-      <li class='holiday'><%= f.check_box :holiday, {multiple: true}, "火",nil %>火曜日</li>
-      <li class='holiday'><%= f.check_box :holiday, {multiple: true}, "水",nil %>水曜日</li>
-      <li class='holiday'><%= f.check_box :holiday, {multiple: true}, "木",nil %>木曜日</li>
-      <li class='holiday'><%= f.check_box :holiday, {multiple: true}, "金",nil %>金曜日</li>
-      <li class='holiday'><%= f.check_box :holiday, {multiple: true}, "土",nil %>土曜日</li>
-    </ul>
+    <%= f.text_area :holiday, class:"input-default", id:"shop_holiday", placeholder:"例) 第一火曜、月曜定休"%>
   </div>
   <div class="form-group"  .form-inline.text-left>
     <div class='form-text-wrap'>
@@ -102,21 +95,21 @@
     <div class='form-text-wrap'>
       <label class="form-text">駐車場の有無</label>
       <span class="info-text">必須</span>
-        <%# <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {class:"select-box", id:"shop_parking"}) %> 
+        <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {class:"select-box", id:"shop_parking"}) %>
     </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">駐車場の説明</label>
     </div>
-    <%= f.text_area :parking_explain, class: :form__text, id:"shop_parking_explain" %>
+    <%= f.text_area :parking_explain, class: :form__text, id:"shop_parking_explain", placeholder:"例) ３台分有り。無い場合は近いパーキング名を入力お願いします" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お店のジャンル</label>
       <span class="info-text">必須</span>
-        <%# <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"shop_genre"}) %> 
     </div>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"shop_genre"}) %>
   </div>
   <div class="form-group">
     <h2 class='form-bottom-text'>
@@ -132,4 +125,3 @@
 </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
