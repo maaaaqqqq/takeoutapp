@@ -5,7 +5,9 @@
       店舗情報入力
     </h1>
   </div>
+
   <%= render 'shared/error_messages', model: f.object %>
+  
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
@@ -95,8 +97,8 @@
     <div class='form-text-wrap'>
       <label class="form-text">駐車場の有無</label>
       <span class="info-text">必須</span>
-        <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {class:"select-box", id:"shop_parking"}) %>
     </div>
+    <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {class:"select-box", id:"shop_parking"}) %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -115,7 +117,7 @@
     <h2 class='form-bottom-text'>
       「会員登録」のボタンを押すことにより、
       <span>利用規約</span>
-      <br>に同意したものとみなします
+      に同意したものとみなします
     </h2>
   </div>
   <div class='register-btn'>
