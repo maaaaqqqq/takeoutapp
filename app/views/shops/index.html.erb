@@ -2,18 +2,61 @@
 <div class="container">
 
 <%# 画面上部 %>
-  <div class="card__wrapper">
-    <%= render partial: "shop", collection: @shop %>
-  </div>
-
+<%# 検索 %>
 
   <div class='text-image'>
-    <%= image_tag "PAK85_yakisobatotamago20130824_TP_V.jpg" %>
+    <%= image_tag "PAK85_yakisobatotamago20130824_TP_V.jpg"%>
     <p>
     事前注文＆決済が可能！テイクアウト注文に特化したサービスです。<br>
     新潟県長岡市にある大好きなお店、気になるお店の味をご自宅で！
     </p>
 	</div>
+
+<%# 飲食店一覧 %>
+
+  <%# <div class="card__wrapper">
+    <%= render partial: "shop", collection: @shop %>
+  <%# </div>  %>
+
+      <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
+      <%# 商品がある場合は表示されないようにしましょう %>
+  <div class='shop-contents'>
+    <h3 class='shop-title'>飲食店一覧</h3>
+    <ul class='shop-lists'>
+      <%# <% if @shops.present? %> 
+        <% @shops.each do |shop| 
+          <li class='shop-list'>
+          <%= link_to '#' do %>
+          <%= image_tag "curry_indian_man_nan.png", class: "shop-img" %>
+            <div class='shop-info'>
+              <h3 class='shop-name'>
+                <span>飲食店名<br></span>
+              </h3>
+              <div class='shop-text'>
+                <span>お店の説明文<br></span>
+              </div>
+            </div>
+            <% end %>
+          </li>
+        <%# <% end %>
+      <li class='shop-list'>
+        <%= link_to '#' do %>
+        <%= image_tag "sushi_syokunin_woman.png", class: "shop-img" %>
+        <div class='shop-info'>
+          <h3 class='shop-name'>
+            飲食店名
+          </h3>
+          <div class='shop-text'>
+            <span>お店の説明文<br></span>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <%# //商品がある場合は表示されないようにしましょう %>
+      <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
+    </ul>
+  </div>
+
 </div>
 
 <%= render "shared/footer" %>

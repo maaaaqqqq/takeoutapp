@@ -314,6 +314,72 @@ body {
   font-family: sans-serif;
 	margin: 10px;
 }
+.footer-lists {
+  display: flex;
+  list-style: none;
+}
+
+/* 飲食店一覧 */
+
+.shop-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:0;
+  margin-top: 20px;
+}
+
+.shop-contents.shop-name {
+  font-size: 3vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.shop-title {
+  font-size: 3vh;
+  text-decoration: none;
+  color: darkgrey;
+  font-weight: bold;
+  margin: 0 0 0 20px;
+}
+
+.shop-lists {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.shop-lists>.list {
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.shop-img-content {
+  position: relative;
+}
+
+.shop-img {
+  width: 25vh;
+  height: 25vh;
+}
+
+.shop-info {
+  background-color: #FFF;
+  color: black;
+  padding: 1vw;
+}
+
+.shop-name {
+  font-size: 2.5vh;
+}
+
+
+/* //飲食店一覧 */
 
 /* _shop.html */
 .card__wrapper {
