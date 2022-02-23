@@ -1,8 +1,9 @@
-<%= render "shared/header" %>
+<%= render "shop_header" %>
+<%= render "shop" %>
 <div class="container">
 
-<%# 画面上部 %>
-<%# 検索 %>
+  <%# 画面上部 %>
+  <%# 検索 %>
 
   <div class='text-image'>
     <%= image_tag "PAK85_yakisobatotamago20130824_TP_V.jpg"%>
@@ -23,40 +24,38 @@
   <div class='shop-contents'>
     <h3 class='shop-title'>飲食店一覧</h3>
     <ul class='shop-lists'>
-      <%# <% if @shops.present? %> 
-        <% @shops.each do |shop| 
-          <li class='shop-list'>
-          <%= link_to '#' do %>
+
+    <% if @shops.present? %>
+
+      <% @shops.each do |shop| %>
+        <li class='shop-list' >
           <%= image_tag "curry_indian_man_nan.png", class: "shop-img" %>
-            <div class='shop-info'>
-              <h3 class='shop-name'>
-                <span>飲食店名<br></span>
-              </h3>
-              <div class='shop-text'>
-                <span>お店の説明文<br></span>
-              </div>
+          <div class='shop-info'>
+            <h3 class='shop-name'>
+              <span>飲食店名 <br></span>
+            </h3>
+            <div class='shop-text'>
+              <span>お店の説明文<br></span>
             </div>
-            <% end %>
-          </li>
-        <%# <% end %>
+          </div>
+        </li>
+      <% end %>
+
+    <% else %>
       <li class='shop-list'>
-        <%= link_to '#' do %>
         <%= image_tag "sushi_syokunin_woman.png", class: "shop-img" %>
         <div class='shop-info'>
           <h3 class='shop-name'>
-            飲食店名
+            <span>飲食店名 <br></span>
           </h3>
           <div class='shop-text'>
             <span>お店の説明文<br></span>
           </div>
         </div>
-        <% end %>
       </li>
-      <%# //商品がある場合は表示されないようにしましょう %>
-      <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
+    <% end %> 
     </ul>
   </div>
 
 </div>
 
-<%= render "shared/footer" %>
