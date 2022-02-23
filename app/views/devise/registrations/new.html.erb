@@ -35,7 +35,7 @@
       <label class="form-text">お店の名前</label>
       <span class="info-text">必須</span>
     </div>
-    <%= f.text_area :name, class:"input-default", id:"shop_name", placeholder:"店名・店舗名", maxlength:"40" %>
+    <%= f.text_area :name, class:"input-default", id:"shop_name", placeholder:"例）店名・店舗名", maxlength:"40" %>
   </div>
 
   <div class="form-group">
@@ -50,7 +50,7 @@
       <label class="form-text">お店のこだわり</label>
       <span class="info-text">必須</span>
     </div>
-      <%= f.text_area :text, class: :form__text, id:"shop_text" , placeholder:"中華料理専門店です"%>
+      <%= f.text_area :text, class: :form__text, id:"shop_text" , placeholder:"例）中華料理専門店です"%>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -74,7 +74,7 @@
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="holiday">定休日</label>
+      <label class="form-text">定休日</label>
       <span class="info-text">必須</span>
     </div>
     <%= f.text_area :holiday, class:"input-default", id:"shop_holiday", placeholder:"例) 第一火曜、月曜定休"%>
