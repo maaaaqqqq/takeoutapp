@@ -52,10 +52,15 @@ https://takeoutapp-37360.herokuapp.com/
 # 開発環境
 
 - フロントエンド
+HTML/CSS/Bootstrap
 - バックエンド
-- インフラ
+Ruby on Rails
+- データベース
+MySQL
 - テスト
+RSpec
 - テキストエディタ
+VSCode
 
 <!-- # ローカルでの動作方法 -->
 <!-- # 工夫したポイント -->
