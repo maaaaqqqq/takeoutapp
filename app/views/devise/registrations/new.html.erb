@@ -1,5 +1,6 @@
-<%= form_with model: @shop, url: shop_registration_path, class: 'registration-main', local: true do |f| %>
-<div class='form-wrap container'>
+<%= render "shops/shop_header" %>
+<%= form_with model: @shop, url: shop_registration_path, class: 'registration-main contaiber', local: true do |f| %>
+<div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
       店舗情報入力
@@ -7,7 +8,7 @@
   </div>
 
   <%= render 'shared/error_messages', model: f.object %>
-  
+
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
@@ -30,6 +31,10 @@
     </div>
     <%= f.password_field :password_confirmation, class:"input-default", id:"shop_password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
+
+  <div class="row p-2 mt-5 mb-3 bg-light"></div>
+
+
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お店の名前</label>
@@ -44,6 +49,13 @@
       <span class="info-text">必須</span>
     </div>
     <%= f.text_area :name_kana, class:"input-default", id:"shop_name_kana", placeholder:"例) テンメイ・テンポメイ" %>
+  </div>
+  <div class="input-time-wrap">
+    <div class='form-time-wrap'>
+      <label class="form-text">お店のジャンル</label>
+      <span class="info-text">必須</span>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select", id:"shop_genre"}) %>
+    </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -79,26 +91,24 @@
     </div>
     <%= f.text_area :holiday, class:"input-default", id:"shop_holiday", placeholder:"例) 第一火曜、月曜定休"%>
   </div>
-  <div class="form-group"  .form-inline.text-left>
-    <div class='form-text-wrap'>
+  <div class="input-time-wrap ">
+    <div class='form-time-wrap'>
       <label class="form-text">開店時間</label>
       <span class="info-text">必須</span>
+      <%= f.time_select :opentime_at, id:"shop_opentime", class: "select"%>
     </div>
-      <%= f.time_select :opentime_at, id:"shop_opentime" %>
-  </div>
-  <div class="form-group"  .form-inline.text-left>
-    <div class='form-text-wrap'>
+    <div class='form-time-wrap'>
       <label class="form-text">閉店時間</label>
       <span class="info-text">必須</span>
+      <%= f.time_select :closetime_at, id:"shop_closetime", class: "select" %>
     </div>
-      <%= f.time_select :closetime_at, id:"shop_closetime" %>
   </div>
-  <div class="form-group">
-    <div class='form-text-wrap'>
+  <div class="input-time-wrap">
+    <div class='form-time-wrap'>
       <label class="form-text">駐車場の有無</label>
       <span class="info-text">必須</span>
+      <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {class:"select", id:"shop_parking"}) %>
     </div>
-    <%= f.collection_select(:parking_id, Parking.all, :id, :name, {}, {class:"select-box", id:"shop_parking"}) %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -107,23 +117,16 @@
     <%= f.text_area :parking_explain, class: :form__text, id:"shop_parking_explain", placeholder:"例) ３台分有り。無い場合は近いパーキング名を入力お願いします" %>
   </div>
   <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">お店のジャンル</label>
-      <span class="info-text">必須</span>
-    </div>
-    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"shop_genre"}) %>
-  </div>
-  <div class="form-group">
     <h2 class='form-bottom-text'>
-      「会員登録」のボタンを押すことにより、
+      「飲食店登録」のボタンを押すことにより、
       <span>利用規約</span>
       に同意したものとみなします
     </h2>
   </div>
   <div class='register-btn'>
-    <%= f.submit "会員登録" ,class:"register-red-btn" %>
+    <%= f.submit "飲食店登録" ,class:"register-red-btn rounded" %>
   </div>
-  <%# <p class='register-info'>本人情報の登録について</p> %>
 </div>
 <% end %>
 
+<%= render "shops/footer" %>

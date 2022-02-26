@@ -90,15 +90,20 @@
 
 .heading {
   width: 100%;
-  padding: 10px 20px;
-  font-family: sans-serif;
-  font-size: 20px;
-  color: white;
+  padding: 10px 30px;
   margin: 10px 0;
+  /* font-size: 20px; */
+  /* color: deepskyblue; */
   height: 50px;
   display: flex;
-  background-color: skyblue;
+  /* background-color: papayawhip; */
+  /* font-weight: bold; */
+}
+
+.header_title{
+  color: black;
   font-weight: bold;
+  /* margin: 0 0 0 30px; */
 }
 
 /* footer */
@@ -108,11 +113,22 @@
 
 .registration-main {
   width: 100%;
-  min-width: 800px;
+  /* min-width: 800px; */
   height: 100%;
-  background-color: #f5f5f5;
+  background-color: #f8f9fa;
   display: flex;
   justify-content: center;
+}
+
+.footer-contents{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+}
+
+.footer-content{
+  color: black;
 }
 
 /* shop/index */
@@ -124,6 +140,11 @@
 .text-image img{
   width: 100%;
   height: auto;
+  background: White;
+	box-shadow: 0 0 5px rgba(0,0,0,.1);
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
 }
 
 .text-image p{
@@ -137,9 +158,10 @@
 
 /* form-wrapは商品購入画面でも使用しています */
 .form-wrap {
-  width: 50%;
-  background-color: white;
-  padding-bottom: 70px;
+  width: 80%;
+  background-color: #FFF;
+  padding-bottom: 20px;
+  margin:10px 0;
 }
 
 .form-header {
@@ -153,10 +175,11 @@
   line-height: 100px;
   border-bottom: 1px solid #f5f5f5;
   font-weight: bold;
+
 }
 
 .form-group {
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -187,6 +210,17 @@
   background: #fff;
   font-size: 16px;
   resize: none;
+}
+
+.form__text{
+  width: 100%;
+  margin-top: 5px;
+  height: 100px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
 }
 
 .info-text {
@@ -222,27 +256,39 @@
   resize: none;
 }
 
-.input-birth-wrap {
+.input-time-wrap {
+  width: 70%;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
-.input-birth-wrap select {
-  width: 75px;
-  margin-top: 5px;
-  height: 45px;
+.input-time-wrap select {
+  width: 80px;
+  margin: 10px;
+  height: 30px;
   padding-left: 10px;
   border-radius: 4px;
-  border: 1px solid #ccc;
   background: #fff;
-  font-size: 12px;
+  font-size: 16px;
   cursor: pointer;
+  border: 1px solid black;
+  background: white;
 }
 
-.input-birth-wrap p {
-  line-height: 60px;
-  padding: 0 5px;
+.form-time-wrap {
+  width: 100%;
+  height: 20%;
 }
+
+.form-time{
+  font-size: 14px;
+  font-weight: bold;
+}
+
 
 .field_with_errors {
   display: contents;
@@ -271,7 +317,7 @@
 }
 
 .register-red-btn {
-  width: 100%;
+  width: 80%;
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
@@ -300,18 +346,15 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 
 
 body {
-	background: WhiteSmoke;
   font-family: sans-serif;
 	margin: 10px;
 }
-.footer-lists {
-  display: flex;
-  list-style: none;
-}
+
 
 /* 飲食店一覧 */
 
@@ -408,47 +451,3 @@ body {
   text-align: right;
   text-decoration: underline;
 } */
-
-/* タブレット対応 */
-@media (max-width: 1024px) {
-  .inner {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .page-heading {
-    font-size: 24px;
-  }
-  .card {
-    width: 48%;
-    margin-bottom: 40px;
-  }
-  .prototype_image{
-    width: 60%;
-  }
-}
-
- /* スマホ表示 */
-@media (max-width: 599px) {
-  .logo {
-    width: 120px;
-  }
-  .page-heading {
-    font-size: 20px;
-  }
-  .card {
-    width: 100%;
-    margin-bottom: 60px;
-  }
-  .card__title {
-    font-size: 18px;
-  }
-  .card__summary {
-    font-size: 14px;
-  }
-  .prototype_image{
-    width: 100%;
-  }
-  .table{
-    width: 100%;
-  }
-}
