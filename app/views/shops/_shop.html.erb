@@ -4,10 +4,40 @@
     <div class="tab-content">
       <ul class="nav">
         <li class="nav-item">
-        <%= link_to '洋食', root_path, class: "nav-link" %>
+        <%= link_to '洋食', root_path, class: "nav-link " %>
         </li>
         <li class="nav-item">
         <%= link_to '和食', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to '居酒屋', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'カレー', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'イタリアン', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'フレンチ', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to '中華料理', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to '韓国料理', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'アジアン・エスニック', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to '各国料理', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to '麺類', root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'スイーツ', root_path, class: "nav-link" %>
         </li>
       </ul>
     </div>
@@ -29,7 +59,10 @@
       <ul class="nav">
         <%if shop_signed_in?%>
           <li class="nav-item">
-          <%= link_to '飲食店マイページ', '#', class: "nav-link" %>
+          <%= link_to '飲食店マイページ', shop_path(current_shop.id), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+          <%= link_to '新規メニュー投稿', '/' , class: "nav-link" %>
           </li>
           <li class="nav-item">
           <%= link_to 'ログアウト', destroy_shop_session_path, method: :delete, class: "nav-link" %>

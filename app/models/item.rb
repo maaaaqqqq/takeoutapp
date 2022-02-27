@@ -3,9 +3,9 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :genre
+  belongs_to :category
 
-  validates :name, :text, presence: true
-  validates :genre_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :name, :text, :image, presence: true
+  validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :price, numericality: { only_integer: true }
 end
