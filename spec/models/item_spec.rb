@@ -27,7 +27,7 @@ RSpec.describe Item, type: :model do
       it 'priceが空では保存できない' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
       it 'category_idの値が1で保存できない' do
         @item.category_id = 1
@@ -42,12 +42,12 @@ RSpec.describe Item, type: :model do
       it 'priceの値が全角数字では保存できない' do
         @item.price = '１０００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
       it 'shopが紐づいていない場合は保存できない' do
         @item.shop = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shop must exist")
+        expect(@item.errors.full_messages).to include('Shop must exist')
       end
     end
   end

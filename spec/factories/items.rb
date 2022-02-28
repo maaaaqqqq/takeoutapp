@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :item do
-    name         { Faker::Food.dish}
+    name         { Faker::Food.dish }
     text         { Faker::Lorem.sentence }
-    price        {Faker::Number.number(digits: 5)}
-    category_id  {Faker::Number.between(from: 2, to: 7)}
+    price        { Faker::Number.number(digits: 5) }
+    category_id  { Faker::Number.between(from: 2, to: 7) }
     association  :shop
 
     after(:build) do |item|
