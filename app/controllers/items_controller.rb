@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_shop!
-  before_action :set_shop, only: [:index, new, :create]
+  before_action :set_shop, expect: :show
 
   def index
     @item = Item.new
@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+
   end
 
   def create
