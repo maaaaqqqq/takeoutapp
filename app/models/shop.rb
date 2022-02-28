@@ -5,6 +5,7 @@ class Shop < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :image
+  has_many :items
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :parking

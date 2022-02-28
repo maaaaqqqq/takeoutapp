@@ -1,121 +1,4 @@
-/* header */
-.tab-wrap {
-	background: White;
-	box-shadow: 0 0 5px rgba(0,0,0,.1);
-	display: flex;
-	flex-wrap: wrap;
-	overflow: hidden;
-	padding: 10px;
-}
-
-.tab-label {
-	color: Gray;
-	cursor: pointer;
-	flex: 1;
-	font-weight: bold;
-	order: -1;
-	padding: 12px 24px;
-	position: relative;
-	text-align: center;
-	transition: cubic-bezier(0.4, 0, 0.2, 1) .2s;
-	user-select: none;
-	white-space: nowrap;
-	-webkit-tap-highlight-color: transparent;
-}
-
-.tab-label:hover {
-	background: rgba(0, 191, 255,.1);
-}
-
-.tab-switch:checked + .tab-label {
-	color: DeepSkyBlue;
-}
-
-.tab-label::after {
-	background: DeepSkyBlue;
-	bottom: 0;
-	content: '';
-	display: block;
-	height: 3px;
-	left: 0;
-	opacity: 0;
-	pointer-events: none;
-	position: absolute;
-	transform: translateX(100%);
-	transition: cubic-bezier(0.4, 0, 0.2, 1) .2s 80ms;
-	width: 100%;
-	z-index: 1;
-}
-
-.tab-switch:checked ~ .tab-label::after {
-	transform: translateX(-100%);
-}
-
-.tab-switch:checked + .tab-label::after {
-	opacity: 1;
-	transform: translateX(0);
-}
-
-.tab-content {
-	height:0;
-	opacity:0;
-	pointer-events:none;
-	transform: translateX(-30%);
-	transition: transform .3s 80ms, opacity .3s 80ms;
-	width: 100%;
-}
-
-.tab-switch:checked ~ .tab-content {
-	transform: translateX(30%);
-}
-
-.tab-switch:checked + .tab-label + .tab-content {
-	height: auto;
-	opacity: 1;
-	order: 1;
-	pointer-events:auto;
-	transform: translateX(0);
-}
-
-.tab-wrap::after {
-	content: '';
-	height: 5px;
-	order: -1;
-	width: 100%;
-}
-
-.tab-switch {
-	display: none;
-}
-
-.heading {
-  width: 100%;
-  padding: 10px 20px;
-  font-family: sans-serif;
-  font-size: 20px;
-  color: white;
-  margin: 10px 0;
-  height: 50px;
-  display: flex;
-  background-color: skyblue;
-  font-weight: bold;
-}
-
-/* footer */
-.takeout-details{
-  font-size: 10px;
-}
-
-.registration-main {
-  width: 100%;
-  min-width: 800px;
-  height: 100%;
-  background-color: #f5f5f5;
-  display: flex;
-  justify-content: center;
-}
-
-/* shop/index */
+/* shops/index */
 .text-image{
   position: relative;
   width: 100%;
@@ -124,6 +7,11 @@
 .text-image img{
   width: 100%;
   height: auto;
+  background: White;
+	box-shadow: 0 0 5px rgba(0,0,0,.1);
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
 }
 
 .text-image p{
@@ -137,9 +25,36 @@
 
 /* form-wrapは商品購入画面でも使用しています */
 .form-wrap {
+  width: 80%;
+  background-color: #FFF;
+  padding-bottom: 20px;
+  margin:10px 0;
+}
+
+.form__btn{
+  display: inline-block;
+  /* padding: 0.4em 1.6em; */
+  /* font-size: 0.8em; */
+  color: #fff;
+  text-decoration: none;
+  /* user-select: none; */
+  background: #87CEFA;
+  border: 1px #87CEFA solid;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
   width: 50%;
-  background-color: white;
-  padding-bottom: 70px;
+  margin: 0 auto;
+}
+
+.form__btn:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+}
+
+.actions{
+  margin: 20px 0;
+  
 }
 
 .form-header {
@@ -147,16 +62,18 @@
   height: 120px;
   text-align: center;
   font-size: 22px;
+  /* font-weight: bold; */
 }
 
 .form-header-text {
   line-height: 100px;
   border-bottom: 1px solid #f5f5f5;
   font-weight: bold;
+
 }
 
 .form-group {
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -187,6 +104,17 @@
   background: #fff;
   font-size: 16px;
   resize: none;
+}
+
+.form__text{
+  width: 100%;
+  margin-top: 5px;
+  height: 100px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
 }
 
 .info-text {
@@ -222,27 +150,39 @@
   resize: none;
 }
 
-.input-birth-wrap {
+.input-time-wrap {
+  width: 70%;
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
-.input-birth-wrap select {
-  width: 75px;
-  margin-top: 5px;
-  height: 45px;
+.input-time-wrap select {
+  width: 80px;
+  margin: 10px;
+  height: 30px;
   padding-left: 10px;
   border-radius: 4px;
-  border: 1px solid #ccc;
   background: #fff;
-  font-size: 12px;
+  font-size: 16px;
   cursor: pointer;
+  border: 1px solid black;
+  background: white;
 }
 
-.input-birth-wrap p {
-  line-height: 60px;
-  padding: 0 5px;
+.form-time-wrap {
+  width: 100%;
+  height: 20%;
 }
+
+.form-time{
+  font-size: 14px;
+  font-weight: bold;
+}
+
 
 .field_with_errors {
   display: contents;
@@ -271,7 +211,7 @@
 }
 
 .register-red-btn {
-  width: 100%;
+  width: 80%;
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
@@ -300,18 +240,16 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 
 
-body {
-	background: WhiteSmoke;
+body, main {
   font-family: sans-serif;
 	margin: 10px;
+  color: #f8f9fa;
 }
-.footer-lists {
-  display: flex;
-  list-style: none;
-}
+
 
 /* 飲食店一覧 */
 
@@ -321,134 +259,121 @@ body {
   flex-direction: column;
   align-items: center;
   padding:0;
-  margin-top: 20px;
-}
-
-.shop-contents.shop-name {
-  font-size: 3vh;
-  line-height: 1.4;
-  font-weight: bold;
 }
 
 .shop-title {
   font-size: 3vh;
   text-decoration: none;
-  color: darkgrey;
+  color:grey;
   font-weight: bold;
   margin: 0 0 0 20px;
 }
 
-.shop-lists {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  list-style: none;
-  margin-top: 20px;
+.shop-list {
+  margin-top: 10px;
 }
 
-.shop-lists>.list {
-  padding: 1vw;
-  background-color: #FFF;
-}
-
-
-.shop-img-content {
-  position: relative;
-}
-
-.shop-img {
-  width: 25vh;
-  height: 25vh;
-}
-
-.shop-info {
-  background-color: #FFF;
-  color: black;
-  padding: 1vw;
-}
-
-.shop-name {
-  font-size: 2.5vh;
-}
-
-
-/* //飲食店一覧 */
-
-/* _shop.html */
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 20vh;
-
+  justify-content: flex-start;
+  min-height: 5vh;
+  width: 100%;
+  margin-top: 20px;
+  list-style: none;
 }
 .card {
-  width: calc((100% - 60px) / 3);
-  margin-bottom: 40px;
-  background-color: #999;
+  /* width: 30; */
+  color: black;
 }
-.card__img {
-  margin-bottom: 16px;
+
+.card-text{
+  color: darkgrey;
+  font-size: 10px;
+  padding-right: 8px;
 }
+
 .card__title {
   display: block;
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-size: 15px;
   font-weight: bold;
 }
 .card__summary {
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: bold;
 }
-/* .card__user {
+
+.card-header{
+  display: flex;
+  text-align: left;
+  align-items: center;
+}
+
+.card-footer{
+  display: flex;
+  text-align: left;
+  align-items: center;
+}
+
+
+/* menu投稿 */
+.purchase-btn {
+  width: 150px;
+  height: 150px;
+  background: #FFF;
+  border:blue solid 4px;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  box-shadow: 2px 2px 5px;
+}
+
+.purchase-btn-text {
+  color: black;
   display: block;
-  font-size: 12px;
-  color: #999;
-  text-align: right;
-  text-decoration: underline;
-} */
-
-/* タブレット対応 */
-@media (max-width: 1024px) {
-  .inner {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .page-heading {
-    font-size: 24px;
-  }
-  .card {
-    width: 48%;
-    margin-bottom: 40px;
-  }
-  .prototype_image{
-    width: 60%;
-  }
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 5px;
 }
 
- /* スマホ表示 */
-@media (max-width: 599px) {
-  .logo {
-    width: 120px;
-  }
-  .page-heading {
-    font-size: 20px;
-  }
-  .card {
-    width: 100%;
-    margin-bottom: 60px;
-  }
-  .card__title {
-    font-size: 18px;
-  }
-  .card__summary {
-    font-size: 14px;
-  }
-  .prototype_image{
-    width: 100%;
-  }
-  .table{
-    width: 100%;
-  }
+.purchase-btn-icon {
+  width: 60%;
+  height: 70px;
 }
+
+
+/* shops/show */
+.shop-navs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.shop_lists{
+  display: flex;
+  flex-direction : column;
+  justify-content:flex-start;
+  width: 100%;
+  margin-left: 30px;
+}
+
+.shop_list{
+  color: rgb(210, 99, 99);
+  margin: 2px 0;
+  list-style: square;
+  font-size: small;
+}
+.shop-nav img {
+  width: 40vw;
+  height: 40vh;
+}
+.shop_list div {
+  color: black;
+}
+

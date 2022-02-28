@@ -122,6 +122,7 @@ VSCode
 
 ### Association
 
+- belongs_to :shop
 - has_many :item_users
 - has_many :users, through: :item_users
 

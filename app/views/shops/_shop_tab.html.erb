@@ -1,0 +1,56 @@
+<div class="tab_wrap">
+	<input id="tab1" type="radio" name="tab_btn" checked>
+	<input id="tab2" type="radio" name="tab_btn">
+	<input id="tab3" type="radio" name="tab_btn">
+	<input id="tab4" type="radio" name="tab_btn">
+	<input id="tab5" type="radio" name="tab_btn">
+	<input id="tab6" type="radio" name="tab_btn">
+
+	<div class="tab_area mb-4">
+		<label class="tab1_label" for="tab1">お弁当</label>
+		<label class="tab2_label" for="tab2">丼もの</label>
+		<label class="tab3_label" for="tab3">セットメニュー</label>
+		<label class="tab4_label" for="tab4">単品メニュー</label>
+		<label class="tab5_label" for="tab5">スイーツ</label>
+		<label class="tab6_label" for="tab6">お飲み物</label>
+	</div>
+
+	<div class="panel_area">
+	  <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+		    <div id="panel1" class="tab_panel">
+          <div class="item__wrapper">
+			    <% if @shop.items.present? %>
+			      <%= render partial: "items/items", collection: @item_id2, as: 'item' %>
+		  	  <% end%>
+          </div>
+		    </div>
+		    <div id="panel2" class="tab_panel">
+			    <% if @shop.items.present? %>
+			      <%= render partial: "items/items", collection: @item_id3, as: 'item' %>
+		    	<% end%>
+	     	</div>
+		    <div id="panel3" class="tab_panel">
+			    <% if @shop.items.present? %>
+	    		  <%= render partial: "items/items", collection: @item_id4, as: 'item' %>
+		    	<% end%>
+		    </div>
+	    	<div id="panel4" class="tab_panel">
+		    	<% if @shop.items.present? %>
+			      <%= render partial: "items/items", collection: @item_id5, as: 'item' %>
+  		  	<% end%>
+	    	</div>
+	    	<div id="panel5" class="tab_panel">
+		    	<% if @shop.items.present? %>
+			      <%= render partial: "items/items", collection: @item_id6, as: 'item' %>
+		    	<% end%>
+	   	  </div>
+  		  <div id="panel6" class="tab_panel">
+	    		<% if @shop.items.present? %>
+		    	  <%= render partial: "items/items", collection: @item_id7, as: 'item' %>
+		    	<% end%>
+		    </div>
+      </div>
+    </div>
+  </div>
+</div>

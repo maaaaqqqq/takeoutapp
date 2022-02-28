@@ -1,5 +1,6 @@
 <%= render "shop_header" %>
 <%= render "shop" %>
+<main>
 <div class="container">
 
   <%# 画面上部 %>
@@ -15,27 +16,33 @@
 
 <%# 飲食店一覧 %>
 
-  <%# <div class="card__wrapper">
+  <div class="card__wrapper">
     <%= render partial: "shop", collection: @shop %>
-  <%# </div>  %>
+  </div> 
 
       <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
       <%# 商品がある場合は表示されないようにしましょう %>
   <div class='shop-contents'>
     <h3 class='shop-title'>飲食店一覧</h3>
-    <ul class='shop-lists'>
+    <div class='card__wrapper'>
 
     <% if @shops.present? %>
 
       <% @shops.each do |shop| %>
-        <li class='shop-list' >
-          <%= image_tag "curry_indian_man_nan.png", class: "shop-img" %>
-          <div class='shop-info'>
-            <h3 class='shop-name'>
-              <span>飲食店名 <br></span>
-            </h3>
-            <div class='shop-text'>
-              <span>お店の説明文<br></span>
+        <li class='shop-list card-group' >
+          <div class="card text-center w-100">
+            <div class="card-header ">
+              <div class="card-text">飲食店名</div>
+              <div class="card__title">
+              <%= link_to shop.name, shop_path(shop.id), class:"text-warning stretched-link"%>
+              </div>
+            </div>
+            <div class="card-body">
+              <%= image_tag "sushi_syokunin_woman.png", class: "card-img-top" %>
+            </div>
+            <div class="card-footer">
+              <div class="card-text">ジャンル</div>
+              <div class="card__summary"><%= shop.genre.name %></div>
             </div>
           </div>
         </li>
@@ -43,19 +50,25 @@
 
     <% else %>
       <li class='shop-list'>
-        <%= image_tag "sushi_syokunin_woman.png", class: "shop-img" %>
-        <div class='shop-info'>
-          <h3 class='shop-name'>
-            <span>飲食店名 <br></span>
-          </h3>
-          <div class='shop-text'>
-            <span>お店の説明文<br></span>
+        <div class="card text-center w-100">
+          <div class="card-header ">
+            <div class="card-text">飲食店名</div>
+            <div class="card__title">サンプル店</div>
+          </div>
+          <div class="card-body">
+            <%= image_tag "sushi_syokunin_woman.png", class: "card-img-top" %>
+          </div>
+          <div class="card-footer">
+            <div class="card-text">ジャンル</div>
+            <div class="card__summary">ジャンル</div>
           </div>
         </div>
       </li>
     <% end %> 
-    </ul>
+    </div>
   </div>
-
 </div>
+</main>
 
+<%= render "shared/new_menu" %>
+<%= render "footer" %>

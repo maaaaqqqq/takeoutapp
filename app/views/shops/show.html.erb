@@ -1,11 +1,58 @@
+<%= render "shop_header" %>
 
-<div class="card">
-  <%# <%= link_to image_tag( @shop.image, class: :card__img), shop_path(shop.id) %> 
-  <div class="card__body">
-    <%# <%= link_to @shop.name, shop_path(shop.id), class: :card__title%> 
-    <p class="card__summary">
-      <%# <%= @shop.text %> 
-    </p>
-    <%# <%= link_to shop.user.name, user_path(prototype.user_id), class: :card__user %>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Top</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @shop.name %></li>
+  </ol>
+</nav>
+
+<div class = "container">
+  <h6><%= @shop.name_kana %>
+    <h3 class = "shop-name"><%= @shop.name %></h3>
+  </h6>
+
+  <div class="shop-navs">
+    <div class="shop-nav">
+      <%= image_tag "shopimage.png",class:"rounded",size: '600x300' %>
+    </div>
+    <div class="shop-nav">
+      <ul class="shop_lists">
+
+        <li class="shop_list">こだわり
+          <div><%= @shop.text%></div>
+        </li>
+        <li class="shop_list">ジャンル
+          <div><%= @shop.genre.name%></div>
+        </li>
+        <li class="shop_list">住所
+          <div><%= @shop.address%></div>
+        </li>
+        <li class="shop_list">電話番号
+          <div><%= @shop.tel%></div>
+        </li>
+        <li class="shop_list">開店時間
+          <div><%= @shop.opentime_at%></div>
+        </li>
+        <li class="shop_list">閉店時間
+          <div><%= @shop.closetime_at%></div>
+        </li>
+        <li class="shop_list">駐車場
+          <div><%= @shop.parking.name%></div>
+        </li>
+        <li class="shop_list">駐車場説明
+          <div><%= @shop.parking_explain%></div>
+        </li>
+      </ul>
+    </div>
   </div>
+
+  <div class="item-navs text-center mt-5 mb-5">
+      <%= render "shop_tab"%>
+  </div>
+
 </div>
+
+<%= render "shop" %>
+<%= render "shared/new_menu" %>
+<%= render "footer" %>
