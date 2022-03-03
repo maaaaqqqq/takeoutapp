@@ -67,4 +67,3 @@ gem 'active_hash'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'pry-rails'
-gem "actionpack", ">= 6.0.4.6"
