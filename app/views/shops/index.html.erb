@@ -20,8 +20,6 @@
     <%= render partial: "shop", collection: @shop %>
   </div> 
 
-      <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-      <%# 商品がある場合は表示されないようにしましょう %>
   <div class='shop-contents'>
     <h3 class='shop-title'>飲食店一覧</h3>
     <div class='card__wrapper'>
@@ -29,11 +27,11 @@
     <% if @shops.present? %>
 
       <% @shops.each do |shop| %>
-        <li class='shop-list card-group' >
+        <li class='shop-list card-group'>
           <div class="card text-center w-100">
             <div class="card-header ">
-              <div class="card-text">飲食店名</div>
-              <div class="card__title">
+              <div class="card-subtitle text-muted me-2">飲食店名</div>
+              <div class="card-title fs-5 font-weight-bold">
               <%= link_to shop.name, shop_path(shop.id), class:"text-warning stretched-link"%>
               </div>
             </div>
@@ -41,8 +39,8 @@
               <%= image_tag "sushi_syokunin_woman.png", class: "card-img-top" %>
             </div>
             <div class="card-footer">
-              <div class="card-text">ジャンル</div>
-              <div class="card__summary"><%= shop.genre.name %></div>
+              <div class="card-subtitle text-muted me-2">ジャンル</div>
+              <div class="card-title fs-5 text-dark font-weight-bold"><%= shop.genre.name %></div>
             </div>
           </div>
         </li>
@@ -52,15 +50,15 @@
       <li class='shop-list'>
         <div class="card text-center w-100">
           <div class="card-header ">
-            <div class="card-text">飲食店名</div>
-            <div class="card__title">サンプル店</div>
+            <div class="card-subtitle text-muted me-2">飲食店名</div>
+            <div class="ccard-title fs-5 font-weight-bold">サンプル店</div>
           </div>
           <div class="card-body">
             <%= image_tag "sushi_syokunin_woman.png", class: "card-img-top" %>
           </div>
           <div class="card-footer">
-            <div class="card-text">ジャンル</div>
-            <div class="card__summary">ジャンル</div>
+            <div class="card-subtitle text-muted me-2">ジャンル</div>
+            <div class="card-title fs-5 font-weight-bold">ジャンル</div>
           </div>
         </div>
       </li>

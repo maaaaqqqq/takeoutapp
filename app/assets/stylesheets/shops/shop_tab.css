@@ -10,7 +10,7 @@ input[type="radio"]{display:none;}
 .tab_area label:hover{opacity:0.5;}
 .tab_panel{width:100%; opacity:0; padding:80px 0; display:none;}
 .tab_panel p{font-size:14px; letter-spacing:1px; text-align:center;}
-.panel_area{background-color:gray;}
+.panel_area{border: #999 solid 1px;}
 #tab1:checked ~ .tab_area .tab1_label{background:#fff; color:#000;}
 #tab1:checked ~ .panel_area #panel1{display:block; animation:tabAnim ease 0.6s forwards; -ms-animation:tabAnim ease 0.6s forwards;}
 #tab2:checked ~ .tab_area .tab2_label{background:#fff; color:#000;}

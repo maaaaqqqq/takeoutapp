@@ -4,8 +4,9 @@ class ShopsController < ApplicationController
   end
 
   def show
+    @shop = Shop.includes(:items)
+    @item = Item.find(params[:id])
     @shop = Shop.find(params[:id])
-    # @item = @shop.items.includes(:shop)
     @items = @shop.items.includes(:shop)
     @item_id2 = @items.where(category_id: 2)
     @item_id3 = @items.where(category_id: 3)

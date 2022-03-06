@@ -1,5 +1,26 @@
 <%= render "shared/header" %>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Top</a></li>
+    <li class="breadcrumb-item"><a href="/"><%= @item.shop.name %></a></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @item.name%></li>
+  </ol>
+</nav>
 
-<p>itemsshow</p>
+<div class ="container">
+  <h3 class ="shop-name"><%= @item.name %></h3>
+  <div class="text-center">
+    <%= link_to image_tag(@item.image, class:"rounded w-50") %>
+  </div>
+  
+  <div class="ms-7">
+    <p>メニュー名  :  <b><%= @item.text%></b></p>
+    <p>カテゴリー  :  <b><%= @item.category.name%></b></p>
+    <p>価格  :  <b>￥<%= @item.price%>（税込み）</b></p>
+  </div>
+
+</div>
+
+
 
 <%= render "shared/footer" %>
