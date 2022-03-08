@@ -28,13 +28,18 @@ class ItemsController < ApplicationController
     # @item = Item.new
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
   private
 
   def item_params
     params.require(:item).permit(:name, :text, :price, :category_id, :image).merge(shop_id: current_shop.id)
   end
-
-  # def set_shop
-  #   @shop = Shop.find(params[:shop_id])
-  # end
 end
