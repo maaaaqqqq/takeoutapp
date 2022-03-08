@@ -14,11 +14,10 @@
 
   <div class="shop-navs">
     <div class="shop-nav">
-      <%= image_tag "shopimage.png",class:"rounded",size: '600x300' %>
+      <%= image_tag "shopimage.png",class:"rounded",size: '400x300' %>
     </div>
     <div class="shop-nav">
       <ul class="shop_lists">
-
         <li class="shop_list">こだわり
           <div><%= @shop.text%></div>
         </li>
@@ -46,11 +45,10 @@
       </ul>
     </div>
   </div>
+</div>
 
-  <div class="item-navs text-center mt-5 mb-5">
-      <%= render "shop_tab"%>
-  </div>
-
+<div class="item-navs text-center ">
+  <%= render "shop_tab"%>
 </div>
 
 <%= render "shared/new_menu" %>

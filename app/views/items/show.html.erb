@@ -1,5 +1,34 @@
 <%= render "shared/header" %>
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Top</a></li>
+    <li class="breadcrumb-item"><a href="/"><%= @item.shop.name %></a></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @item.name%></li>
+  </ol>
+</nav>
 
-<p>itemsshow</p>
+<div class ="container">
+  <h3 class ="shop-name"><%= @item.name %></h3>
+
+  <div class=" d-flex justify-content-center ">
+    <%= link_to image_tag(@item.image, class:"rounded",size: '400x300') %>
+  </div>
+  
+  <ul class="item_lists d-flex flex-column mt-4 ">
+    <li>メニュー説明 </li>
+    <b><%= @item.text%></b>
+    <li>カテゴリー </li>
+    <b><%= @item.category.name%></b>
+    <li>価格 </li>
+    <b>￥<%= @item.price%>（税込み）</b>
+   </ul>
+
+  <%if shop_signed_in? && current_shop.id == @item.shop_id%>
+    <div class="row text-center mt-3">
+      <%=link_to "メニュー編集",  edit_shop_item_path(@item.id), class:"btn btn-outline-info ext-nowrap col-2" %>
+      <%=link_to "メニュー削除",  edit_shop_item_path(@item.id), method: :delete, class:"btn btn-outline-danger ext-nowrap col-2" %>
+    <div>
+  <% end%>
+</div>
 
 <%= render "shared/footer" %>
