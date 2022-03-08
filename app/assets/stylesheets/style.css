@@ -366,3 +366,17 @@ body, main {
   color: black;
 }
 
+/* items/show */
+
+.item_lists{
+  color: black;
+  margin: 2px 0;
+  list-style: square;
+}
+
+.item_lists li {
+  color: rgb(210, 99, 99);
+  margin: 2px 0;
+  list-style: square;
+
+}

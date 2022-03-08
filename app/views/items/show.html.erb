@@ -9,15 +9,18 @@
 
 <div class ="container">
   <h3 class ="shop-name"><%= @item.name %></h3>
-  <div class="text-center">
-    <%= link_to image_tag(@item.image, class:"rounded w-50") %>
+  <div class=" d-flex justify-content-center ">
+    <%= link_to image_tag(@item.image, class:"rounded",size: '400x300') %>
   </div>
   
-  <div class="ms-7">
-    <p>メニュー名  :  <b><%= @item.text%></b></p>
-    <p>カテゴリー  :  <b><%= @item.category.name%></b></p>
-    <p>価格  :  <b>￥<%= @item.price%>（税込み）</b></p>
-  </div>
+  <ul class="item_lists d-flex flex-column mt-4 ">
+    <li>メニュー説明 </li>
+    <b><%= @item.text%></b>
+    <li>カテゴリー </li>
+    <b><%= @item.category.name%></b>
+    <li>価格 </li>
+    <b>￥<%= @item.price%>（税込み）</b>
+   </ul>
 
 </div>
 

@@ -1,11 +1,10 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_shop!
-  # before_action :set_shop, expect: :show
+  before_action :authenticate_shop!, except: :show
+  # before_action :set_shop, except: :show
 
   def index
-    @item = Item.new
-    @shop = Shop.find(params[:shop_id])
-
+    # @item = Item.new
+    # @shop = Shop.find(params[:shop_id])
   end
 
   def new
@@ -14,7 +13,6 @@ class ItemsController < ApplicationController
 
   def create
     @shop = Shop.find(params[:shop_id])
-
     @item = @shop.items.new(item_params)
     if @item.save
       redirect_to root_path
@@ -25,7 +23,7 @@ class ItemsController < ApplicationController
 
   def show
     @shop = Shop.includes(:items)
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:shop_id])
     
     # @item = Item.new
   end
