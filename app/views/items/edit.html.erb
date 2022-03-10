@@ -1,5 +1,50 @@
 <%= render "shared/header" %>
+<%= form_with model: [@shop, @item], local: true do |f|%>
+<div class="container">
+  <div class= "form mt-3 mb-3 pb-3 bg-light">
+    <div class="form-header">
+      <div class = "form-header-text">メニュー投稿画面</div>
+    </div>
+    
+    <%= render 'shared/error_messages', model: f.object %>
 
-<h1>edit</h1>
+    <div class="form-group">
+      <div class="form-text-wrap mb-3">
+        <label class="image form-text">メニューのサンプル写真</label>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
 
+      <div class='form-text-wrap'>
+        <label class="form-text">メニュー名</label>
+        <span class="info-text">必須</span>
+        <%= f.text_area :name, class:"input-default", id:"item_name", placeholder:"例）幕の内弁当", maxlength:"40" %>
+      </div>
+
+      <div class='form-text-wrap'>
+        <label class="form-text">メニューカテゴリー</label>
+        <span class="info-text">必須</span>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select", id:"item_category"}) %>
+      </div>
+
+      <div class='form-text-wrap'>
+        <label class="form-text">こだわり</label>
+        <span class="info-text">必須</span>
+        <%= f.text_area :text, class: :form__text, id:"item_text" , placeholder:"例）焼鮭が美味しいです"%>
+      </div>
+
+      <div class="form-text-wrap">
+        <label class="form-text">価格</label>
+        <span class="info-text">必須</span>
+        <span class="sell-yen">¥</span>
+        <%= f.text_field :price, class:"price-input", id:"item-price", placeholder:"例）1100" %>
+      </div>
+    </div>
+
+    <div class="actions form-group">
+      <%= f.submit "投稿する", class: :form__btn %>
+      
+    </div>
+  </div>
+</div>
+<% end %>
 <%= render "shared/footer" %>

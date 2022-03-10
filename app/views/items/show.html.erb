@@ -1,4 +1,5 @@
 <%= render "shared/header" %>
+
 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Top</a></li>
@@ -23,12 +24,37 @@
     <b>￥<%= @item.price%>（税込み）</b>
    </ul>
 
-  <%if shop_signed_in? && current_shop.id == @item.shop_id%>
-    <div class="row text-center mt-3">
-      <%=link_to "メニュー編集",  edit_shop_item_path(@item.id), class:"btn btn-outline-info ext-nowrap col-2" %>
-      <%=link_to "メニュー削除",  edit_shop_item_path(@item.id), method: :delete, class:"btn btn-outline-danger ext-nowrap col-2" %>
-    <div>
-  <% end%>
+  <div class="text-center mt-3 mb-3">
+    <%if shop_signed_in? && current_shop.id == @item.shop_id%>
+    <!-- Button trigger modal -->
+      <%=link_to "メニュー編集", edit_shop_item_path(@item.id), class:"btn btn-outline-info ext-nowrap" %>
+      <button type='button' class='btn btn-outline-danger ext-nowrap"' data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        メニュー削除
+      </button>
+    <% end%>
+  </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">まだ削除していません</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        消したデータを元に戻すことはできません。<br>
+        本当に削除してよろしいですか？
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">しない</button>
+        <%=link_to "メニュー削除", shop_item_path(@item.id), method: :delete, class:"btn btn-outline-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <%= render "shared/footer" %>

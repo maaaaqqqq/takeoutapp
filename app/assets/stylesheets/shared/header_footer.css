@@ -110,7 +110,6 @@
 
 .registration-main {
   width: 100%;
-  /* min-width: 800px; */
   height: 100%;
   background-color: #f8f9fa;
   display: flex;
@@ -118,21 +117,15 @@
 }
 
 footer{
-	width: 100%;
 	margin: 0;
   background-color: #f8f9fa;
 	height: 70px;
 	display: flex;
   justify-content: center;
   align-items: center;
-}
-.footer-contents{
+	color: black;
 }
 
-.footer-content{
-  color: black;
-	
-}
 
 /* 共通 */
 
