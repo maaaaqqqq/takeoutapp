@@ -26,14 +26,19 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @shop = Shop.find(params[:id])
     @item = Item.find(params[:shop_id])
+    @shop = Shop.find(params[:id])
+
+    unless shop_signed_in? && current_shop.id == @item.shop_id
+      redirect_to root_path
+    end
   end
 
   def update
+    @shop = Shop.find(params[:shop_id])
     @item = Item.find(params[:id])
     if @item.update(item_params)
-      redirect_to shop_item_path(params[:id])
+      redirect_to shop_path(params[:shop_id])
     else
       render :edit
     end

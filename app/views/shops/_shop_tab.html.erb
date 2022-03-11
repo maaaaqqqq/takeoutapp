@@ -16,49 +16,41 @@
   </div>
 
   <div class="panel_area">
+    <div id="panel1" class="tab_panel">
+      <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
+        <%= render partial: "items", collection: @item_id2, as: 'item' %>
+      </div>
+    </div>
 
+    <div id="panel2" class="tab_panel">
+      <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
+        <%= render partial: "items", collection: @item_id3, as: 'item' %>
+      </div>
+    </div>
 
-        <div id="panel1" class="tab_panel">
-          <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
-            <%= render partial: "items", collection: @item_id2, as: 'item' %>
-          </div>
-        </div>
+    <div id="panel3" class="tab_panel">
+      <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
+        <%= render partial: "items", collection: @item_id4, as: 'item' %>
+      </div>
+    </div>
 
-        <div id="panel2" class="tab_panel">
-          <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
-            <%= render partial: "items", collection: @item_id3, as: 'item' %>
-          </div>
+    <div id="panel4" class="tab_panel">
+      <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
+        <%= render partial: "items", collection: @item_id5, as: 'item' %>
+      </div>
+    </div>
 
-        </div>
+    <div id="panel5" class="tab_panel">
+      <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
+  	    <%= render partial: "items", collection: @item_id6, as: 'item' %>
+      </div>
+    </div>
 
-        <div id="panel3" class="tab_panel">
-          <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
-            <%= render partial: "items", collection: @item_id4, as: 'item' %>
-          </div>
-		    </div>
+    <div id="panel6" class="tab_panel">
+      <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
+	    	<%= render partial: "items", collection: @item_id7, as: 'item'%>
+      </div>
+    </div>
 
-	    	<div id="panel4" class="tab_panel">
-          <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
-
-			      <%= render partial: "items", collection: @item_id5, as: 'item' %>
-          </div>
-	    	</div>
-
-	    	<div id="panel5" class="tab_panel">
-          <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
-  			    <%= render partial: "items", collection: @item_id6, as: 'item' %>
-          </div>
-        </div>
-
-
-  		  <div id="panel6" class="tab_panel">
-          <div class="row row-cols-sm-2 row-cols-md-4 row-cols-lg-6 g-4">
-		    	<%= render partial: "items", collection: @item_id7, as: 'item'%>
-          </div>
-        </div>
-
-
-      <%# </div>
-    </div> %>
   </div>
 </div>
