@@ -119,16 +119,12 @@
 
 .info-text {
   color: #888;
-  font-size: 15px;
+  font-size: 13px;
   margin-top: 3px;
 }
 
 .form-info-header {
   font-weight: bold;
-}
-
-.form-info-text {
-  font-size: 15px;
 }
 
 .input-name-wrap {
