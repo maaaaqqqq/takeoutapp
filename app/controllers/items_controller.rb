@@ -1,17 +1,16 @@
 class ItemsController < ApplicationController
   before_action :authenticate_shop!, except: :show
-  # before_action :set_shop, except: :show
-
+  before_action :authenticate_user!, except: :show
+  before_action :set_shop_id, only: [:new, :create, :update]
+  before_action :set_item_id, only: [:show, :edit]
   def index
   end
 
   def new
     @item = Item.new
-    @shop = Shop.find(params[:shop_id])
   end
 
   def create
-    @shop = Shop.find(params[:shop_id])
     @item = @shop.items.new(item_params)
     if @item.save
       redirect_to root_path
@@ -22,20 +21,15 @@ class ItemsController < ApplicationController
 
   def show
     @shop = Shop.includes(:items)
-    @item = Item.find(params[:shop_id])
   end
 
   def edit
-    @item = Item.find(params[:shop_id])
     @shop = Shop.find(params[:id])
 
-    unless shop_signed_in? && current_shop.id == @item.shop_id
-      redirect_to root_path
-    end
+    redirect_to root_path unless shop_signed_in? && current_shop.id == @item.shop_id
   end
 
   def update
-    @shop = Shop.find(params[:shop_id])
     @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to shop_path(params[:shop_id])
@@ -47,13 +41,10 @@ class ItemsController < ApplicationController
   def destroy
     item = Item.find(params[:shop_id])
     if shop_signed_in? && current_shop.id == item.shop_id
-      if item.destroy
-        render template:"items/destroy"
-      end
+      render template: 'items/destroy' if item.destroy
     else
       redirect_to shop_item_path
     end
-    
   end
 
   private
@@ -62,4 +53,11 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :text, :price, :category_id, :image).merge(shop_id: current_shop.id)
   end
 
+  def set_shop_id
+    @shop = Shop.find(params[:shop_id])
+  end
+
+  def set_item_id
+    @item = Item.find(params[:shop_id])
+  end
 end
