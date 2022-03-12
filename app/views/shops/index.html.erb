@@ -1,5 +1,5 @@
 <%= render "shared/header" %>
-<%= render "shop" %>
+<%= render "top_index" %>
 <main>
 <div class="container">
 
@@ -17,7 +17,7 @@
 <%# 飲食店一覧 %>
 
   <div class="card__wrapper">
-    <%= render partial: "shop", collection: @shop %>
+    <%= render partial: "top_index", collection: @shop %>
   </div> 
 
   <div class='shop-contents'>

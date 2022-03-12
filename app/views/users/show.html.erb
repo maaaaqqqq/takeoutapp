@@ -1,0 +1,14 @@
+<%= render "shared/header" %>
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Top</a></li>
+    <li class="breadcrumb-item active" aria-current="page">mypage</li>
+  </ol>
+</nav>
+
+<div class = "container">
+  <h6>こんにちは、<%= @user.name %>さん</h6>
+</div>
+
+<%= render "shared/footer" %>
