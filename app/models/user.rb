@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   validates :nickname, :name, presence: true
   validates :tel, presence: true, format: { with: /\A\d{10,11}\z/ },
-  numericality: { only_integer: true, message: 'is not a number' }
-  
+                  numericality: { only_integer: true, message: 'is not a number' }
+
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers'
 

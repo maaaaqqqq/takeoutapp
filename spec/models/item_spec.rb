@@ -52,12 +52,12 @@ RSpec.describe Item, type: :model do
       it 'priceの値が9以下の場合は保存できない' do
         @item.price = 9
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 10")
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 10')
       end
       it 'priceの値が整数でない場合は保存できない' do
         @item.price = 100.5
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be an integer")
+        expect(@item.errors.full_messages).to include('Price must be an integer')
       end
     end
   end

@@ -26,9 +26,7 @@ class ItemsController < ApplicationController
   def edit
     @shop = Shop.find(params[:id])
 
-    unless shop_signed_in? && current_shop.id == @item.shop_id
-      redirect_to root_path
-    end
+    redirect_to root_path unless shop_signed_in? && current_shop.id == @item.shop_id
   end
 
   def update
@@ -43,13 +41,10 @@ class ItemsController < ApplicationController
   def destroy
     item = Item.find(params[:shop_id])
     if shop_signed_in? && current_shop.id == item.shop_id
-      if item.destroy
-        render template:"items/destroy"
-      end
+      render template: 'items/destroy' if item.destroy
     else
       redirect_to shop_item_path
     end
-    
   end
 
   private
