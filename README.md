@@ -126,7 +126,7 @@ VSCode
 - has_many :item_users
 - has_many :users, through: :item_users
 
-## Item_userテーブル
+## Ordersテーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -139,7 +139,7 @@ VSCode
 - belongs_to :user
 - has_one :reserve
 
-## Reserveテーブル
+## Reservesテーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
