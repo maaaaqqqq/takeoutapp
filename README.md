@@ -54,7 +54,7 @@ https://takeoutapp-37360.herokuapp.com/
 - フロントエンド
 HTML/CSS/Bootstrap
 - バックエンド
-Ruby on Rails
+Ruby
 - データベース
 MySQL
 - テスト
