@@ -43,7 +43,7 @@ https://takeoutapp-37360.herokuapp.com/
 
 # データベース設計
 
-[![Image from Gyazo](https://i.gyazo.com/22a0085be57ab6e4560322cc2738dcb8.png)](https://gyazo.com/22a0085be57ab6e4560322cc2738dcb8)
+[![Image from Gyazo](https://i.gyazo.com/b5be80f16c944765899042b747ade9c5.png)](https://gyazo.com/b5be80f16c944765899042b747ade9c5)
 
 # 画面遷移図
 
@@ -107,8 +107,8 @@ VSCode
 
 ### Association
 
-- has_many :item_users
-- has_many :items, through: :item_users
+- has_many :orders
+- has_many :items, through: :orders
 
 ## Itemsテーブル
 
@@ -123,8 +123,7 @@ VSCode
 ### Association
 
 - belongs_to :shop
-- has_many :item_users
-- has_many :users, through: :item_users
+- has_many :orders
 
 ## Ordersテーブル
 
@@ -144,8 +143,8 @@ VSCode
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | takeout_at   | datetime   | null: false                    |
-| item_user    | references | null: false, foreign_key: true |
+| order        | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :item_user
+- belongs_to :order
