@@ -107,8 +107,8 @@ VSCode
 
 ### Association
 
-- has_many :item_users
-- has_many :items, through: :item_users
+- has_many :orders
+- has_many :items, through: :orders
 
 ## Itemsテーブル
 
@@ -123,10 +123,10 @@ VSCode
 ### Association
 
 - belongs_to :shop
-- has_many :item_users
-- has_many :users, through: :item_users
+- has_many :orders
+- has_many :users, through: :order
 
-## Item_userテーブル
+## Ordersテーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -144,8 +144,8 @@ VSCode
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | takeout_at   | datetime   | null: false                    |
-| item_user    | references | null: false, foreign_key: true |
+| order        | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :item_user
+- belongs_to :order
